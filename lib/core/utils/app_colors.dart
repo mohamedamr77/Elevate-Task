@@ -1,8 +1,46 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-class AppColors{
+class AppColors {
   static const Color blackColor = Color(0xff000000);
   static const Color primaryColor = Color(0xff3640CE);
   static const Color secondaryColor = Color(0xffF4F0F0);
   static const Color thirdColor = Color(0xff808080);
+  static const Color grayColor1 = Color(0xffB0B0B0);
+  static const Color lightGrayColor = Color(0xffF6F6F6);
+  static const Color grayBlackColor = Color(0xff454545);
+  static const Color blueAccent = Color(0xff4250E9);
+  static const Color grayColor = Color(0xffD1D1D1);
+  static const Color whiteColor = Color(0xffFFFFFF);
+  static const Color lightGrayColor2 = Color(0xffE6E6E6);
+  static const Color darkBlueColor = Color(0xff1A1E4C);
+  static const Color darkGrayColor = Color(0xff282625);
+  static const Color pinkColor = Color(0xffFFB8B8);
+  static const Color mediumGrayColor = Color(0xff6D6D6D);
+  static const Color deepGrayColor = Color(0xff2F2E41);
+  static const Color darkCharcoalColor = Color(0xff262626);
+  static const Color skyBlueColor = Color(0xffDFECFF);
+  static const Color navyBlueColor = Color(0xff2C3583);
+  static const Color tanColor = Color(0xffB9895A);
+  static const Color lightBeigeColor = Color(0xffECE9E9);
+  static const Color yellowColor = Color(0xffFFD90F);
+  static const Color orangeYellowColor = Color(0xffFEC74B);
+  static const Color darkBlueAccent = Color(0xff4255BF);
+  static const Color lightGrayColor3 = Color(0xffCCCCCC);
+  static const Color mediumBlueColor = Color(0xff3D4DA6);
+  static const Color blackShadeColor = Color(0xff010101);
+  static const Color lightGrayColor4 = Color(0xffD9D9D9);
+  static const Color softBlueColor = Color(0xff5F78F5);
+  static const Color redColor = Color(0xffFF0000);
+  static const Color brightRedColor = Color(0xffFF2323);
+  static const Color slateGrayColor = Color(0xff646363);
+  static const Color lightGrayColor5 = Color(0xffE7E7E7);
+  static const Color beigeColor = Color(0xffEADFD5);
+  static const Color offWhiteColor = Color(0xffFBFBFD);
+  static const Color lavenderColor = Color(0xffDCC4E3);
+  static const Color veryLightGrayColor = Color(0xffEEEEEE);
+  static const Color grayBlueColor = Color(0xff455A64);
+  static const Color whiteSmokeColor = Color(0xffF2F2F2);
+  static const Color darkSlateGray = Color(0xff3F3D56);
+  static const Color softBlueAccent = Color(0xff7E9CFB);
+  static const Color purpleShadeColor = Color(0xff73467C);
 }
