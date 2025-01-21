@@ -9,7 +9,7 @@ class PriceProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GText(
         color: AppColors.darkBlueColor,

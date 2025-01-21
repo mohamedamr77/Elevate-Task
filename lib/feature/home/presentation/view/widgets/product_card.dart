@@ -6,9 +6,11 @@ import 'package:elevatetask/feature/home/presentation/view/widgets/rating_produc
 import 'package:elevatetask/feature/home/presentation/view/widgets/title_product.dart';
 import 'package:flutter/material.dart';
 import 'add_to_cart_button.dart';
+
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    super.key,});
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,9 @@ class ProductCard extends StatelessWidget {
         // Product Card Container
         _buildProductCard(),
         // Add to Cart Button
-         AddToCartButton(onTap: () {  },),
+        AddToCartButton(
+          onTap: () {},
+        ),
         // Favorite Button
         FavButton(onPressed: () {}, isFav: false)
       ],
@@ -31,15 +35,24 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           // Product Image
-           const ImageProduct(urlImage: "assets/images/clothestest.jpeg",),
+          const ImageProduct(
+            urlImage: "assets/images/clothestest.jpeg",
+          ),
           _buildSpacerWidget(),
           // Product Title
-          const TitleProduct(title: "Nike Air NikeNike Air Nike Nike Air Nike   Air Nike Nike Air Nike  ",),
+          const TitleProduct(
+            title:
+                "Nike Air NikeNike Air Nike Nike Air Nike   Air Nike Nike Air Nike  ",
+          ),
           _buildSpacerWidget(),
           // Product Price
-          const PriceProduct(price: '1200',),
+          const PriceProduct(
+            price: '1200',
+          ),
           // Product Rating
-          const RatingProduct(rate: '4.6',),
+          const RatingProduct(
+            rate: '4.6',
+          ),
           _buildSpacerWidget(height: 16),
         ],
       ),
@@ -50,7 +63,7 @@ class ProductCard extends StatelessWidget {
     return SizedBox(height: height ?? 8);
   }
 
-  BoxDecoration _buildDecorationItem(){
+  BoxDecoration _buildDecorationItem() {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(0.03.w),
       border: Border.all(

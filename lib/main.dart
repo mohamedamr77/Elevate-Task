@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'core/navigation/navigation_manager.dart';
 import 'core/navigation/routes.dart';
 import 'core/utils/app_colors.dart';
 import 'core/utils/const_variables.dart';
 import 'feature/bottom_nav_bar/presentation/view/bottom_nav_bar_view.dart';
-import 'feature/home/presentation/view/home_view.dart';
 import 'package:device_preview/device_preview.dart';
 void main (){
   runApp(const MyApp());

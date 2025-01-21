@@ -12,7 +12,7 @@ class ImageProduct extends StatelessWidget {
         topLeft: Radius.circular(0.027.w),
         topRight: Radius.circular(0.027.w),
       ),
-      child:  Image(
+      child: Image(
         image: AssetImage(urlImage),
         width: double.infinity,
         fit: BoxFit.cover,

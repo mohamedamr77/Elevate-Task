@@ -89,12 +89,12 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.mediumGrayColor.withOpacity(0.7),
-          selectedLabelStyle:  TextStyle(
+          selectedLabelStyle: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: getResponsiveFontSize(context: context, fontSize: 16),
             fontFamily: AppFontFamily.cairoFontFamily,
           ),
-          unselectedLabelStyle:  TextStyle(
+          unselectedLabelStyle: TextStyle(
             fontSize: getResponsiveFontSize(context: context, fontSize: 14),
             fontFamily: AppFontFamily.cairoFontFamily,
           ),
@@ -110,6 +110,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
       ),
     );
   }
+
   Widget _buildAnimatedIcon(int index) {
     final isActive = currentIndex == index;
 
