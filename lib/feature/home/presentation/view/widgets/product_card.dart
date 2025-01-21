@@ -17,7 +17,7 @@ class ProductCard extends StatelessWidget {
         // Product Card Container
         _buildProductCard(),
         // Add to Cart Button
-        const AddToCartButton(),
+         AddToCartButton(onTap: () {  },),
         // Favorite Button
         FavButton(onPressed: () {}, isFav: false)
       ],
@@ -31,15 +31,15 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           // Product Image
-          const ImageProduct(),
+           const ImageProduct(urlImage: "assets/images/clothestest.jpeg",),
           _buildSpacerWidget(),
           // Product Title
-          const TitleProduct(),
+          const TitleProduct(title: "Nike Air NikeNike Air Nike Nike Air Nike   Air Nike Nike Air Nike  ",),
           _buildSpacerWidget(),
           // Product Price
-          const PriceProduct(),
+          const PriceProduct(price: '1200',),
           // Product Rating
-          const RatingProduct(),
+          const RatingProduct(rate: '4.6',),
           _buildSpacerWidget(height: 16),
         ],
       ),

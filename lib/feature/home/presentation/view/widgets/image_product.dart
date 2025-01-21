@@ -2,7 +2,8 @@ import 'package:elevatetask/core/extentions/screen_size.dart';
 import 'package:flutter/material.dart';
 
 class ImageProduct extends StatelessWidget {
-  const ImageProduct({super.key});
+  final String urlImage;
+  const ImageProduct({super.key, required this.urlImage});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +12,8 @@ class ImageProduct extends StatelessWidget {
         topLeft: Radius.circular(0.027.w),
         topRight: Radius.circular(0.027.w),
       ),
-      child: const Image(
-        image: AssetImage("assets/images/clothestest.jpeg"),
+      child:  Image(
+        image: AssetImage(urlImage),
         width: double.infinity,
         fit: BoxFit.cover,
       ),

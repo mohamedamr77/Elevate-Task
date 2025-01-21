@@ -4,7 +4,8 @@ import '../../../../../core/shared_widget/global_text.dart';
 import '../../../../../core/utils/app_colors.dart';
 
 class TitleProduct extends StatelessWidget {
-  const TitleProduct({super.key});
+  final String title;
+  const TitleProduct({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class TitleProduct extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GText(
         color: AppColors.primaryColor,
-        content: "Nike Air NikeNike Air Nike Nike Air Nike   Air Nike Nike Air Nike  ",
+        content: title,
         fontSize: 16,
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
