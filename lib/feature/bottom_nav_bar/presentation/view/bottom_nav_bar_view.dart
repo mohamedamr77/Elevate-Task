@@ -3,6 +3,7 @@ import 'package:elevatetask/core/utils/font_family.dart';
 import 'package:elevatetask/core/utils/font_size_responsize.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../home/presentation/view/home_view.dart';
 import '../../data/bottom_nav_icon_list.dart';
 
 class BottomNavBarView extends StatefulWidget {
@@ -15,7 +16,7 @@ class BottomNavBarView extends StatefulWidget {
 
 class _BottomNavBarViewState extends State<BottomNavBarView> {
   final List<Widget> navPages = [
-    const Scaffold(body: Center(child: Text("Amr"))),
+    const HomeView(),
     const Scaffold(body: Center(child: Text("Mohamed"))),
     // Add more pages here
   ];
