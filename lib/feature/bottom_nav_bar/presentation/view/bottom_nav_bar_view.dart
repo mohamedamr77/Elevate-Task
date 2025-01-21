@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import '../../data/bottom_nav_icon_list.dart';
 
 class BottomNavBarView extends StatefulWidget {
   static String id ="BottomNavBarView";
@@ -153,29 +154,3 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
     );
   }
 }
-
-class BottomNavIconWithLabel {
-  final Widget iconSelected;
-  final Widget iconUnSelected;
-  final String label;
-  BottomNavIconWithLabel({
-    required this.iconSelected,
-    required this.iconUnSelected,
-    required this.label,
-  });
-}
-
-List<BottomNavIconWithLabel> bottomNavIconsList = [
-  BottomNavIconWithLabel(
-    label: 'Home',
-    iconSelected: const Icon(Icons.home,color: AppColors.skyBlueColor,),
-    iconUnSelected: const Icon(Icons.home_outlined,color: AppColors.primaryColor,)
-  ),
-  BottomNavIconWithLabel(
-    label: 'favorite',
-    iconSelected:
-    const Icon(Icons.favorite,color: AppColors.skyBlueColor,),
-    iconUnSelected:
-    const Icon(Icons.favorite_border_outlined,color: AppColors.primaryColor,),
-  ),
-];
