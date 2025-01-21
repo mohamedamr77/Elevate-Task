@@ -5,6 +5,7 @@ import 'core/navigation/routes.dart';
 import 'core/utils/app_colors.dart';
 import 'core/utils/const_variables.dart';
 import 'feature/bottom_nav_bar/presentation/view/bottom_nav_bar_view.dart';
+import 'feature/home/presentation/view/home_view.dart';
 
 void main (){
   runApp(const MyApp());
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             navigatorKey: NavigationManager.navigationKey,
             routes: AppRouter.routes,
-            initialRoute: BottomNavBarView.id,
+            initialRoute: HomeView.id,
           ),
         );
       },

@@ -37,12 +37,8 @@ class GText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       content,
-      textAlign: textAlign ??
-          (SharedFunctions.isArabicLocale() ? TextAlign.left : TextAlign.right),
-      textDirection: textDirection ??
-          (SharedFunctions.isArabicLocale()
-              ? TextDirection.ltr
-              : TextDirection.rtl),
+      textAlign: textAlign ?? TextAlign.left,
+      textDirection: textDirection ??TextDirection.ltr,
       maxLines: maxLines,
       style: TextStyle(
         fontSize: getResponsiveFontSize(context: context, fontSize: fontSize),
