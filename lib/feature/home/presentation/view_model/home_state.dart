@@ -10,3 +10,5 @@ class ProductsHomeFaliureState extends HomeState {
   final String errorMessage;
   ProductsHomeFaliureState({required this.errorMessage});
 }
+
+class HomeRebuildState extends HomeState {}

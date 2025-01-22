@@ -8,7 +8,6 @@ import 'core/navigation/routes.dart';
 import 'core/utils/app_colors.dart';
 import 'core/utils/const_variables.dart';
 import 'feature/bottom_nav_bar/presentation/view/bottom_nav_bar_view.dart';
-import 'package:device_preview/device_preview.dart';
 
 import 'feature/home/data/model/product_model.dart';
 import 'feature/home/data/model/rate_model/rate_model.dart';
@@ -48,9 +47,6 @@ class MyApp extends StatelessWidget {
         ht = constraints.maxHeight;
         return SafeArea(
           child: MaterialApp(
-            useInheritedMediaQuery: true,
-            locale: DevicePreview.locale(context),
-            builder: DevicePreview.appBuilder,
             theme: ThemeData(
                 appBarTheme: const AppBarTheme(
                   elevation: 0,
