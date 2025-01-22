@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 part 'rate_model.g.dart';
+
 @HiveType(typeId: 1)
 class Rating extends Equatable {
   @HiveField(0)

@@ -18,11 +18,11 @@ class ProductModel extends Equatable {
   @HiveField(5)
   final String image;
   @HiveField(6)
-   bool fav;
+  bool fav;
   @HiveField(7)
   final Rating rating;
 
-    ProductModel({
+  ProductModel({
     required this.id,
     required this.title,
     required this.price,
@@ -59,15 +59,13 @@ class ProductModel extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    title,
-    price,
-    description,
-    category,
-    image,
-    fav,
-    rating,
-  ];
+        id,
+        title,
+        price,
+        description,
+        category,
+        image,
+        fav,
+        rating,
+      ];
 }
-
-

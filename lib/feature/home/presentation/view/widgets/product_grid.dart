@@ -105,9 +105,8 @@ class _ProductGridState extends State<ProductGrid>
     if (state is ProductsHomeFaliureState) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(state.errorMessage),
-          backgroundColor: AppColors.redColor
-        ),
+            content: Text(state.errorMessage),
+            backgroundColor: AppColors.redColor),
       );
     }
   }

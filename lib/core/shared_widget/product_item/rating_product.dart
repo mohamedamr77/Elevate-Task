@@ -19,13 +19,14 @@ class RatingProduct extends StatelessWidget {
         children: [
           _buildReviewText(),
           const SizedBox(width: 4),
-           AppIcons.starIcon,
+          AppIcons.starIcon,
           const Spacer(),
         ],
       ),
     );
   }
-  Widget _buildReviewText(){
+
+  Widget _buildReviewText() {
     return GText(
       color: AppColors.blueAccent,
       content: "${AppText.review} ($rate)",

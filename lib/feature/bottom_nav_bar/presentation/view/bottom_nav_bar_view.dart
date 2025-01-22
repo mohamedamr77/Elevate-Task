@@ -18,7 +18,7 @@ class BottomNavBarView extends StatefulWidget {
 class _BottomNavBarViewState extends State<BottomNavBarView> {
   final List<Widget> navPages = [
     const HomeView(),
-    const FavProductScreen(),    // Add more pages here
+    const FavProductScreen(), // Add more pages here
   ];
 
   int currentIndex = 0;

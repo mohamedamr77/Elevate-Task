@@ -1,3 +1,3 @@
-class BoxApp{
-  static const String favBox= "FavBox";
+class BoxApp {
+  static const String favBox = "FavBox";
 }

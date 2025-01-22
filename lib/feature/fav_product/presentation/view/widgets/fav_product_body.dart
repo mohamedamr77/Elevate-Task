@@ -22,45 +22,51 @@ class FavProductBody extends StatelessWidget {
         builder: (context, state) {
           List<ProductModel> favProducts = cubit.favProductList;
           return favProducts.isEmpty
-              ?  _buildEmptyView()
-              :  _buildFavList(favProducts: favProducts);
+              ? _buildEmptyView()
+              : _buildFavList(favProducts: favProducts);
         },
       ),
     );
   }
-  Widget _buildEmptyView(){
+
+  Widget _buildEmptyView() {
     return Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              AppImages.emptyFavScreen,
-              height: 0.6.h,
-              width: double.infinity,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(height: 16,),
-            const GText(
-                color: AppColors.primaryColor,
-                content: AppText.noFavourite, fontSize: 18)
-          ],)
-    );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          AppImages.emptyFavScreen,
+          height: 0.6.h,
+          width: double.infinity,
+          fit: BoxFit.contain,
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        const GText(
+            color: AppColors.primaryColor,
+            content: AppText.noFavourite,
+            fontSize: 18)
+      ],
+    ));
   }
-  Widget _buildFavList({required List<ProductModel> favProducts}){
-    return CustomScrollView(slivers: [
-      SliverToBoxAdapter(
-          child: Wrap(
-            alignment: WrapAlignment.spaceAround,
-            runSpacing: 0.03.h, // Vertical spacing between rows
-            children: List.generate(
-              favProducts.length,
-                  (index) => SizedBox(
-                width: 0.43.w, // Set width for each item
-                child: ProductCard(productModel: favProducts[index]),
-              ),
+
+  Widget _buildFavList({required List<ProductModel> favProducts}) {
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+            child: Wrap(
+          alignment: WrapAlignment.spaceAround,
+          runSpacing: 0.03.h, // Vertical spacing between rows
+          children: List.generate(
+            favProducts.length,
+            (index) => SizedBox(
+              width: 0.43.w, // Set width for each item
+              child: ProductCard(productModel: favProducts[index]),
             ),
-          )
-      )
-    ],);
+          ),
+        ))
+      ],
+    );
   }
 }

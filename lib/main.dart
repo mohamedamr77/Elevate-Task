@@ -13,7 +13,7 @@ import 'package:device_preview/device_preview.dart';
 import 'feature/home/data/model/product_model.dart';
 import 'feature/home/data/model/rate_model/rate_model.dart';
 
-void main() async{
+void main() async {
   await Hive.initFlutter(); // Initialize Hive for Flutter
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(RatingAdapter());

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/app_icons.dart';
 
 class AddToCartButton extends StatelessWidget {
   final void Function() onTap;
@@ -13,12 +15,8 @@ class AddToCartButton extends StatelessWidget {
         onTap: onTap,
         child: const CircleAvatar(
           radius: 18,
-          backgroundColor: Color(0xff004087),
-          child: Icon(
-            Icons.add,
-            color: Colors.white,
-            size: 20,
-          ),
+          backgroundColor: AppColors.primaryColor,
+          child: AppIcons.addIcon,
         ),
       ),
     );
