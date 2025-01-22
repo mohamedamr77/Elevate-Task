@@ -1,13 +1,25 @@
+import 'package:elevatetask/feature/home/data/model/rate_model/rate_model.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+part 'product_model.g.dart';
 
+@HiveType(typeId: 0)
 class ProductModel extends Equatable {
+  @HiveField(0)
   final int id;
+  @HiveField(1)
   final String title;
+  @HiveField(2)
   final double price;
+  @HiveField(3)
   final String description;
+  @HiveField(4)
   final String category;
+  @HiveField(5)
   final String image;
+  @HiveField(6)
    bool fav;
+  @HiveField(7)
   final Rating rating;
 
     ProductModel({
@@ -59,29 +71,3 @@ class ProductModel extends Equatable {
 }
 
 
-class Rating extends Equatable {
-  final double rate;
-  final int count;
-
-  const Rating({
-    required this.rate,
-    required this.count,
-  });
-
-  factory Rating.fromJson(Map<String, dynamic> json) {
-    return Rating(
-      rate: (json['rate'] as num).toDouble(),
-      count: json['count'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'rate': rate,
-      'count': count,
-    };
-  }
-
-  @override
-  List<Object?> get props => [rate, count];
-}

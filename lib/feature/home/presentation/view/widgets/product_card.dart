@@ -1,4 +1,6 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
+import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
+import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_state.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/fav_button.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/image_product.dart';
@@ -6,10 +8,12 @@ import 'package:elevatetask/feature/home/presentation/view/widgets/price_product
 import 'package:elevatetask/feature/home/presentation/view/widgets/rating_product.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/title_product.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'add_to_cart_button.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductModel productModel;
+
   const ProductCard({
     super.key,
     required this.productModel,
@@ -26,7 +30,12 @@ class ProductCard extends StatelessWidget {
           onTap: () {},
         ),
         // Favorite Button
-        FavButton(onPressed: () {}, isFav: productModel.fav)
+        FavButton(
+            onPressed: () {
+              BlocProvider.of<FavProductCubit>(context)
+                  .changeFavProductIcon(productModel: productModel);
+            },
+            isFav: productModel.fav),
       ],
     );
   }
