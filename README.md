@@ -5,9 +5,9 @@ A new Flutter project.
 ## Video
 [Watch the video](https://drive.google.com/file/d/1jElQJXyMLrj69TsLkSN5zIPHaJHAwsCg/view?usp=sharing)
 
-## Image
-![Image1](https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN)
-![Image2](https://drive.google.com/uc?export=view&id=1bo7c_sA70MREfC0C_e6EyJIh1dKoBulJ)
+## Images
+<img src="https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN" alt="Image1" width="200" height="200">
+<img src="https://drive.google.com/uc?export=view&id=1bo7c_sA70MREfC0C_e6EyJIh1dKoBulJ" alt="Image2" width="200" height="200">
 
 ## Getting Started
 
