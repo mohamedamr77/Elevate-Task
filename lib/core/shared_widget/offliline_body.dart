@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'custom_elevated_btn.dart';
 import 'global_text.dart';
 
-
 class OfflineBody extends StatelessWidget {
-
   const OfflineBody({super.key, required this.onPressCheckInternet});
-    final void Function() onPressCheckInternet;
+  final void Function() onPressCheckInternet;
   @override
   Widget build(BuildContext context) {
     return Center(

@@ -34,7 +34,8 @@ class HomeRepoImplement implements HomeRepo {
             e.type == DioExceptionType.receiveTimeout ||
             e.type == DioExceptionType.sendTimeout ||
             e.type == DioExceptionType.connectionError) {
-          return left(ServerFailure(errorMessage: AppText.noInternetConnection));
+          return left(
+              ServerFailure(errorMessage: AppText.noInternetConnection));
         }
         return left(ServerFailure.fromDioException(e));
       } else {

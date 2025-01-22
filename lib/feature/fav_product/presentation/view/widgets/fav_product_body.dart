@@ -56,6 +56,13 @@ class FavProductBody extends StatelessWidget {
   Widget _buildFavList({required List<ProductModel> favProducts}) {
     return CustomScrollView(
       slivers: [
+        /*
+    note :
+        i use wrap and not use for gridview or sliver grid because in responsive give
+        some problem because of use aspect ratio and percentage between
+        height and width change between every phone and give overflow
+        and design not good
+     */
         SliverToBoxAdapter(
             child: Wrap(
           alignment: WrapAlignment.spaceAround,

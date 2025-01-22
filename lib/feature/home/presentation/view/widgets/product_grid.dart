@@ -34,8 +34,7 @@ class _ProductGridState extends State<ProductGrid>
 
   void _fetchProducts() {
     _fetchFavProduct();
-    homeCubit.fetchProduct(
-        favList: favProductCubit.favProductList);
+    homeCubit.fetchProduct(favList: favProductCubit.favProductList);
   }
 
   void _fetchFavProduct() {
@@ -57,7 +56,6 @@ class _ProductGridState extends State<ProductGrid>
   }
 
   Widget _buildContent(HomeState state) {
-
     List<ProductModel> products = homeCubit.products;
 
     if (state is ProductsHomeLoadingState && products.isEmpty) {
@@ -87,32 +85,38 @@ class _ProductGridState extends State<ProductGrid>
   Widget _buildErrorState(String errorMessage) {
     return errorMessage == AppText.noInternetConnection
         ? OfflineBody(
-      onPressCheckInternet: () {
-        // Call the Cubit's fetch method when retry button is pressed
-        homeCubit.fetchProduct(
-          favList: favProductCubit.favProductList,
-        );
-      },
-    )
+            onPressCheckInternet: () {
+              // Call the Cubit's fetch method when retry button is pressed
+              homeCubit.fetchProduct(
+                favList: favProductCubit.favProductList,
+              );
+            },
+          )
         : Center(
-      child: Text(
-        errorMessage,
-        style: const TextStyle(
-          color: Colors.red,
-          fontSize: 16,
-        ),
-      ),
-    );
+            child: Text(
+              errorMessage,
+              style: const TextStyle(
+                color: Colors.red,
+                fontSize: 16,
+              ),
+            ),
+          );
   }
 
-
   Widget _buildProductGrid(List<ProductModel> products) {
+    /*
+    note :
+        i use wrap and not use for gridview or sliver grid because in responsive give
+        some problem because of use aspect ratio and percentage between
+        height and width change between every phone and give overflow
+        and design not good
+     */
     return Wrap(
       alignment: WrapAlignment.spaceAround,
       runSpacing: 0.03.h, // Vertical spacing between rows
       children: List.generate(
         products.length,
-            (index) => SizedBox(
+        (index) => SizedBox(
           width: 0.43.w, // Set width for each item
           child: ProductCard(productModel: products[index]),
         ),

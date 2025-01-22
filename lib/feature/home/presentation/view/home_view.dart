@@ -1,6 +1,4 @@
-import 'package:elevatetask/core/helper/api_service.dart';
 import 'package:elevatetask/core/utils/service_locator.dart';
-import 'package:elevatetask/feature/home/data/repo/home_implement.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/home_body.dart';
 import 'package:elevatetask/feature/home/presentation/view_model/home_cubit.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (context) =>
-           getIt<HomeCubit>(),
+        create: (context) => getIt<HomeCubit>(),
         child: const HomeBody(),
       ),
     );
