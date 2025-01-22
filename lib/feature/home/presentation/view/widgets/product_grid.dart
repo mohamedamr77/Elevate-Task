@@ -1,5 +1,6 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
 import 'package:elevatetask/core/shared_widget/build_shimmer_shape.dart';
+import 'package:elevatetask/core/utils/app_colors.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:elevatetask/core/shared_widget/product_item/product_card.dart';
@@ -70,7 +71,7 @@ class _ProductGridState extends State<ProductGrid>
       alignment: WrapAlignment.spaceAround,
       runSpacing: 0.03.h,
       children: List.generate(
-          10, (index) => BuildShimmerShape(width: 0.44.w, height: 0.3.h)),
+          8, (index) => BuildShimmerShape(width: 0.44.w, height: 0.3.h)),
     );
   }
 
@@ -105,7 +106,7 @@ class _ProductGridState extends State<ProductGrid>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(state.errorMessage),
-          backgroundColor: Colors.red,
+          backgroundColor: AppColors.redColor
         ),
       );
     }

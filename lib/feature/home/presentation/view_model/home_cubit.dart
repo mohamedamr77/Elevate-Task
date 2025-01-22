@@ -21,11 +21,11 @@ class HomeCubit extends Cubit<HomeState> {
       (success) {
         products = success;
 
-        products = products.map((bookItem) {
-          if (favList.any((ProductModel favItem) => favItem.id == bookItem.id)) {
-            bookItem.fav = true; // Assuming you have a `isNewsMarked` field
+        products = products.map((product) {
+          if (favList.any((ProductModel favItem) => favItem.id == product.id)) {
+            product.fav = true; // Assuming you have a `isNewsMarked` field
           }
-          return bookItem;
+          return product;
         }).toList();
         debugPrint(products.toString());
         emit(ProductsHomeSuccessState());
@@ -33,13 +33,3 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 }
-
-/*
-
-      featuredBooksList = featuredBooksList.map((bookItem) {
-        if (savedBookList.any((savedBook) => savedBook.id == bookItem.id)) {
-          bookItem.saveBook = true; // Assuming you have a `isNewsMarked` field
-        }
-        return bookItem;
-      }).toList();
- */
