@@ -3,8 +3,10 @@ import 'package:elevatetask/core/shared_widget/global_text.dart';
 import 'package:elevatetask/core/utils/app_colors.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_state.dart';
+import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../core/shared_widget/product_item/product_card.dart';
 
 class FavProductBody extends StatelessWidget {
   const FavProductBody({super.key});
@@ -12,12 +14,16 @@ class FavProductBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = BlocProvider.of<FavProductCubit>(context);
-    return BlocBuilder<FavProductCubit, FavProductState>(
-      builder: (context, state) {
-        return cubit.favProductList.isEmpty
-            ?  _buildEmptyView()
-            : const CustomScrollView(slivers: [],);
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: BlocBuilder<FavProductCubit, FavProductState>(
+        builder: (context, state) {
+          List<ProductModel> favProducts = cubit.favProductList;
+          return favProducts.isEmpty
+              ?  _buildEmptyView()
+              :  _buildFavList(favProducts: favProducts);
+        },
+      ),
     );
   }
   Widget _buildEmptyView(){
@@ -37,5 +43,22 @@ class FavProductBody extends StatelessWidget {
                 content: "No Favourite Items", fontSize: 18)
           ],)
     );
+  }
+  Widget _buildFavList({required List<ProductModel> favProducts}){
+    return CustomScrollView(slivers: [
+      SliverToBoxAdapter(
+          child: Wrap(
+            alignment: WrapAlignment.spaceAround,
+            runSpacing: 0.03.h, // Vertical spacing between rows
+            children: List.generate(
+              favProducts.length,
+                  (index) => SizedBox(
+                width: 0.43.w, // Set width for each item
+                child: ProductCard(productModel: favProducts[index]),
+              ),
+            ),
+          )
+      )
+    ],);
   }
 }
