@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
           onTap: () {},
         ),
         // Favorite Button
-        FavButton(onPressed: () {}, isFav: false)
+        FavButton(onPressed: () {}, isFav: productModel.fav)
       ],
     );
   }

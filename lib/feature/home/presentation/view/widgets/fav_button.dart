@@ -22,7 +22,7 @@ class FavButton extends StatelessWidget {
         icon: CircleAvatar(
           backgroundColor: AppColors.secondaryColor,
           child: Icon(
-            isFav ? Icons.favorite_border : Icons.favorite,
+            isFav ?   Icons.favorite : Icons.favorite_border,
             color: AppColors.primaryColor,
           ),
         ),
