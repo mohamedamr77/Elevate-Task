@@ -1,4 +1,5 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
+import 'package:elevatetask/core/utils/app_colors.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_state.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
@@ -23,13 +24,10 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Product Card Container
         _buildProductCard(productModel: productModel),
-        // Add to Cart Button
         AddToCartButton(
           onTap: () {},
         ),
-        // Favorite Button
         _buildFavButton(context: context),
       ],
     );
@@ -72,7 +70,7 @@ class ProductCard extends StatelessWidget {
       color: Colors.white,
       borderRadius: BorderRadius.circular(0.03.w),
       border: Border.all(
-        color: const Color(0xffB2C8DD),
+        color: AppColors.borderColor,
         width: 2.5,
       ),
     );

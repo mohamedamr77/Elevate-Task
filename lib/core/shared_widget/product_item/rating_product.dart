@@ -1,3 +1,5 @@
+import 'package:elevatetask/core/utils/app_icons.dart';
+import 'package:elevatetask/core/utils/app_text.dart';
 import 'package:flutter/material.dart';
 
 import '../global_text.dart';
@@ -15,22 +17,21 @@ class RatingProduct extends StatelessWidget {
         textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          GText(
-            color: AppColors.blueAccent,
-            content: "Review ($rate)",
-            fontSize: 13,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
+          _buildReviewText(),
           const SizedBox(width: 4),
-          const Icon(
-            Icons.star,
-            color: Color(0xffFFD800),
-            size: 18,
-          ),
+           AppIcons.starIcon,
           const Spacer(),
         ],
       ),
+    );
+  }
+  Widget _buildReviewText(){
+    return GText(
+      color: AppColors.blueAccent,
+      content: "${AppText.review} ($rate)",
+      fontSize: 13,
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

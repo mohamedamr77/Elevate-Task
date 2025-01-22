@@ -1,3 +1,4 @@
+import 'package:elevatetask/core/utils/app_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/app_colors.dart';
@@ -21,10 +22,7 @@ class FavButton extends StatelessWidget {
         onPressed: onPressed,
         icon: CircleAvatar(
           backgroundColor: AppColors.secondaryColor,
-          child: Icon(
-            isFav ?   Icons.favorite : Icons.favorite_border,
-            color: AppColors.primaryColor,
-          ),
+          child: isFav ? AppIcons.favIcon :AppIcons.favBorderIcon,
         ),
       ),
     );
