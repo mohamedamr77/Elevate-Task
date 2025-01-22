@@ -1,7 +1,7 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
 import 'package:elevatetask/core/shared_widget/build_shimmer_shape.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/product_card.dart';
+import 'package:elevatetask/core/shared_widget/product_item/product_card.dart';
 import 'package:elevatetask/feature/home/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

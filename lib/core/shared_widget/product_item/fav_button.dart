@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class FavButton extends StatelessWidget {
   final void Function() onPressed;

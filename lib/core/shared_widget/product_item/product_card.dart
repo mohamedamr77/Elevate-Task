@@ -2,11 +2,11 @@ import 'package:elevatetask/core/extentions/screen_size.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_state.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/fav_button.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/image_product.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/price_product.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/rating_product.dart';
-import 'package:elevatetask/feature/home/presentation/view/widgets/title_product.dart';
+import 'package:elevatetask/core/shared_widget/product_item/fav_button.dart';
+import 'package:elevatetask/core/shared_widget/product_item/image_product.dart';
+import 'package:elevatetask/core/shared_widget/product_item/price_product.dart';
+import 'package:elevatetask/core/shared_widget/product_item/rating_product.dart';
+import 'package:elevatetask/core/shared_widget/product_item/title_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'add_to_cart_button.dart';
@@ -30,12 +30,7 @@ class ProductCard extends StatelessWidget {
           onTap: () {},
         ),
         // Favorite Button
-        FavButton(
-            onPressed: () {
-              BlocProvider.of<FavProductCubit>(context)
-                  .changeFavProductIcon(productModel: productModel);
-            },
-            isFav: productModel.fav),
+        _buildFavButton(context: context),
       ],
     );
   }
@@ -80,6 +75,19 @@ class ProductCard extends StatelessWidget {
         color: const Color(0xffB2C8DD),
         width: 2.5,
       ),
+    );
+  }
+
+  _buildFavButton({required BuildContext context}) {
+    return BlocBuilder<FavProductCubit, FavProductState>(
+      builder: (context, state) {
+        return FavButton(
+            onPressed: () {
+              BlocProvider.of<FavProductCubit>(context)
+                  .changeFavProductIcon(productModel: productModel);
+            },
+            isFav: productModel.fav);
+      },
     );
   }
 }
