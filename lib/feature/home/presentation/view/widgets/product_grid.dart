@@ -9,7 +9,7 @@ class ProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       alignment: WrapAlignment.spaceAround,
-      runSpacing: 0.03.h, // Vertical spacing between rows
+      runSpacing: 0.03.h, // Vertical spacing between rows 
       children: List.generate(
         8,
         (index) => SizedBox(
