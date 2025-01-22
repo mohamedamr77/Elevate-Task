@@ -4,9 +4,12 @@ import 'package:elevatetask/feature/home/presentation/view_model/home_state.dart
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/service_locator.dart';
+import '../../data/repo/home_implement.dart';
+
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit({required this.homeRepo}) : super(HomeInitialState());
-  final HomeRepo homeRepo;
+  HomeCubit() : super(HomeInitialState());
+  final homeRepo = getIt<HomeRepoImplement>();
   List<ProductModel> products = [];
 
   fetchProduct({required List<ProductModel> favList}) async {
@@ -27,11 +30,10 @@ class HomeCubit extends Cubit<HomeState> {
           }
           return product;
         }).toList();
+
         debugPrint(products.toString());
         emit(ProductsHomeSuccessState());
       },
     );
   }
-
-
 }

@@ -7,6 +7,7 @@ import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_prod
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../../../../../core/shared_widget/product_item/product_card.dart';
 import '../../../../../core/utils/app_text.dart';
 
@@ -15,10 +16,11 @@ class FavProductBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FavProductCubit cubit = BlocProvider.of<FavProductCubit>(context);
+    FavProductCubit cubit = GetIt.instance<FavProductCubit>();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: BlocBuilder<FavProductCubit, FavProductState>(
+        bloc: cubit,
         builder: (context, state) {
           List<ProductModel> favProducts = cubit.favProductList;
           return favProducts.isEmpty

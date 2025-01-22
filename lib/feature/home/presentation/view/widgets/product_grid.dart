@@ -9,6 +9,7 @@ import 'package:elevatetask/core/shared_widget/product_item/product_card.dart';
 import 'package:elevatetask/feature/home/presentation/view_model/home_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../../view_model/home_cubit.dart';
 
 class ProductGrid extends StatefulWidget {
@@ -20,26 +21,32 @@ class ProductGrid extends StatefulWidget {
 
 class _ProductGridState extends State<ProductGrid>
     with AutomaticKeepAliveClientMixin {
+  late final HomeCubit homeCubit;
+  late final FavProductCubit favProductCubit;
+
   @override
   void initState() {
     super.initState();
+    homeCubit = GetIt.instance<HomeCubit>();
+    favProductCubit = GetIt.instance<FavProductCubit>();
     _fetchProducts();
   }
 
   void _fetchProducts() {
     _fetchFavProduct();
-    BlocProvider.of<HomeCubit>(context).fetchProduct(
-        favList: BlocProvider.of<FavProductCubit>(context).favProductList);
+    homeCubit.fetchProduct(
+        favList: favProductCubit.favProductList);
   }
 
   void _fetchFavProduct() {
-    BlocProvider.of<FavProductCubit>(context).fetchFavProduct();
+    favProductCubit.fetchFavProduct();
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context); // Required for AutomaticKeepAliveClientMixin
     return BlocConsumer<HomeCubit, HomeState>(
+      bloc: homeCubit,
       builder: (BuildContext context, state) {
         return _buildContent(state);
       },
@@ -50,8 +57,8 @@ class _ProductGridState extends State<ProductGrid>
   }
 
   Widget _buildContent(HomeState state) {
-    final cubit = BlocProvider.of<HomeCubit>(context);
-    List<ProductModel> products = cubit.products;
+
+    List<ProductModel> products = homeCubit.products;
 
     if (state is ProductsHomeLoadingState && products.isEmpty) {
       return _buildLoadingState();
@@ -82,8 +89,8 @@ class _ProductGridState extends State<ProductGrid>
         ? OfflineBody(
       onPressCheckInternet: () {
         // Call the Cubit's fetch method when retry button is pressed
-        BlocProvider.of<HomeCubit>(context).fetchProduct(
-          favList: BlocProvider.of<FavProductCubit>(context).favProductList,
+        homeCubit.fetchProduct(
+          favList: favProductCubit.favProductList,
         );
       },
     )
@@ -105,7 +112,7 @@ class _ProductGridState extends State<ProductGrid>
       runSpacing: 0.03.h, // Vertical spacing between rows
       children: List.generate(
         products.length,
-        (index) => SizedBox(
+            (index) => SizedBox(
           width: 0.43.w, // Set width for each item
           child: ProductCard(productModel: products[index]),
         ),

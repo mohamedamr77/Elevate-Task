@@ -1,4 +1,5 @@
 import 'package:elevatetask/core/utils/box_app.dart';
+import 'package:elevatetask/core/utils/service_locator.dart';
 import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,12 +15,13 @@ import 'feature/home/data/model/rate_model/rate_model.dart';
 
 void main() async {
   await Hive.initFlutter(); // Initialize Hive for Flutter
+  setupGetIt();
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(RatingAdapter());
   await Hive.openBox<ProductModel>(BoxApp.favBox);
 
   runApp(BlocProvider(
-    create: (context) => FavProductCubit(),
+    create: (context) => getIt<FavProductCubit>(),
     child: const MyApp(),
   ));
 }
