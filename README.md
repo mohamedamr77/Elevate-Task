@@ -6,7 +6,8 @@ A new Flutter project.
 [Watch the video](https://drive.google.com/file/d/1jElQJXyMLrj69TsLkSN5zIPHaJHAwsCg/view?usp=sharing)
 
 ## Image
-![Image](https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN)
+![Image1](https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN)
+![Image2](https://drive.google.com/uc?export=view&id=1bo7c_sA70MREfC0C_e6EyJIh1dKoBulJ)
 
 ## Getting Started
 
