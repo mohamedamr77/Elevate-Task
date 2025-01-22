@@ -7,7 +7,7 @@ A new Flutter project.
 
 ## Images
 <p>
-  <img src="https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN" alt="Image1" width="400" height="700" style="margin-right: 10px;">
+  <img src="https://drive.google.com/uc?export=view&id=1kennbHwxrkXmPQIV0Jj0y0P40mazW6bN" alt="Image1" width="400" height="700" style="margin-right: 100px;">
   <img src="https://drive.google.com/uc?export=view&id=1bo7c_sA70MREfC0C_e6EyJIh1dKoBulJ" alt="Image2" width="400" height="700">
 </p>
 
