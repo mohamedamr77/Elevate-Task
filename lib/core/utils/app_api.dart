@@ -1,3 +1,3 @@
-class AppApi{
-  static String product="products";
+class AppApi {
+  static String product = "products";
 }

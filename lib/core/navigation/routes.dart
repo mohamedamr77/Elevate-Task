@@ -7,6 +7,5 @@ class AppRouter {
   static Map<String, Widget Function(dynamic)> routes = {
     BottomNavBarView.id: (context) => const BottomNavBarView(),
     HomeView.id: (context) => const HomeView(),
-
   };
 }

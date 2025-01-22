@@ -7,19 +7,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit({required this.homeRepo}) : super(HomeInitialState());
   final HomeRepo homeRepo;
-  List<ProductModel> products=[];
+  List<ProductModel> products = [];
 
-  fetchProduct()async{
+  fetchProduct() async {
     emit(ProductsHomeLoadingState());
-    var result =await homeRepo.getProduct();
-    result.fold((error) {
-      debugPrint(error.errorMessage);
+    var result = await homeRepo.getProduct();
+    result.fold(
+      (error) {
+        debugPrint(error.errorMessage);
 
-    emit(ProductsHomeFaliureState(errorMessage: error.errorMessage));
-    }, (productsList) {
-      products =productsList;
-      debugPrint(products.toString());
-      emit(ProductsHomeSuccessState());
-    },);
+        emit(ProductsHomeFaliureState(errorMessage: error.errorMessage));
+      },
+      (productsList) {
+        products = productsList;
+        debugPrint(products.toString());
+        emit(ProductsHomeSuccessState());
+      },
+    );
   }
 }

@@ -62,8 +62,8 @@ class _ProductGridState extends State<ProductGrid>
     return Wrap(
       alignment: WrapAlignment.spaceAround,
       runSpacing: 0.03.h,
-      children:List.generate(10,
-          (index) =>BuildShimmerShape(width: 0.44.w, height: 0.3.h)),
+      children: List.generate(
+          10, (index) => BuildShimmerShape(width: 0.44.w, height: 0.3.h)),
     );
   }
 
@@ -80,13 +80,12 @@ class _ProductGridState extends State<ProductGrid>
   }
 
   Widget _buildProductGrid(List<ProductModel> products) {
-
     return Wrap(
       alignment: WrapAlignment.spaceAround,
       runSpacing: 0.03.h, // Vertical spacing between rows
       children: List.generate(
         products.length,
-            (index) => SizedBox(
+        (index) => SizedBox(
           width: 0.43.w, // Set width for each item
           child: ProductCard(productModel: products[index]),
         ),

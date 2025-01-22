@@ -1,7 +1,5 @@
 import 'package:elevatetask/feature/home/presentation/view/widgets/product_grid.dart';
-import 'package:elevatetask/feature/home/presentation/view_model/home_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});

@@ -11,7 +11,8 @@ import 'add_to_cart_button.dart';
 class ProductCard extends StatelessWidget {
   final ProductModel productModel;
   const ProductCard({
-    super.key, required this.productModel,
+    super.key,
+    required this.productModel,
   });
 
   @override
@@ -32,26 +33,25 @@ class ProductCard extends StatelessWidget {
 
   Widget _buildProductCard({required ProductModel productModel}) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       decoration: _buildDecorationItem(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           // Product Image
-           ImageProduct(
+          ImageProduct(
             urlImage: productModel.image,
           ),
           _buildSpacerWidget(),
           // Product Title
-           TitleProduct(
-            title: productModel.title),
+          TitleProduct(title: productModel.title),
           _buildSpacerWidget(),
           // Product Price
-           PriceProduct(
+          PriceProduct(
             price: productModel.price.toString(),
           ),
           // Product Rating
-           RatingProduct(
+          RatingProduct(
             rate: productModel.rating.rate.toString(),
           ),
         ],

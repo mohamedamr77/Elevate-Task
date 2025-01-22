@@ -5,7 +5,8 @@ import 'core/utils/app_colors.dart';
 import 'core/utils/const_variables.dart';
 import 'feature/bottom_nav_bar/presentation/view/bottom_nav_bar_view.dart';
 import 'package:device_preview/device_preview.dart';
-void main (){
+
+void main() {
   runApp(const MyApp());
 }
 /*
@@ -20,7 +21,6 @@ void main (){
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
  */
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -41,8 +41,7 @@ class MyApp extends StatelessWidget {
                   elevation: 0,
                   backgroundColor: AppColors.lightGrayColor,
                 ),
-                scaffoldBackgroundColor: AppColors.lightGrayColor
-            ),
+                scaffoldBackgroundColor: AppColors.lightGrayColor),
             debugShowCheckedModeBanner: false,
             navigatorKey: NavigationManager.navigationKey,
             routes: AppRouter.routes,

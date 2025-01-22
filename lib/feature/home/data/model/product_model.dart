@@ -1,4 +1,3 @@
-
 class ProductModel {
   final int id;
   final String title;

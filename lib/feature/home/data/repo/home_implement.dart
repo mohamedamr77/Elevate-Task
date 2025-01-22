@@ -5,7 +5,6 @@ import 'package:elevatetask/core/helper/api_service.dart';
 import 'package:elevatetask/core/utils/app_api.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:elevatetask/feature/home/data/repo/home_repo.dart';
-import 'package:flutter/cupertino.dart';
 
 class HomeRepoImplement implements HomeRepo {
   final ApiService apiService;
@@ -16,7 +15,6 @@ class HomeRepoImplement implements HomeRepo {
   Future<Either<Failure, List<ProductModel>>> getProduct() async {
     try {
       var result = await apiService.get(endpoint: AppApi.product);
-
 
       if (result is List) {
         List<dynamic> productsFromApi = result;
