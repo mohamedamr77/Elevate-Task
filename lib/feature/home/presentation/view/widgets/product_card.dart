@@ -65,6 +65,7 @@ class ProductCard extends StatelessWidget {
 
   BoxDecoration _buildDecorationItem() {
     return BoxDecoration(
+      color: Colors.white,
       borderRadius: BorderRadius.circular(0.03.w),
       border: Border.all(
         color: const Color(0xffB2C8DD),

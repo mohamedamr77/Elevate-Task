@@ -25,12 +25,14 @@ class _ProductGridState extends State<ProductGrid> {
   @override
   Widget build(BuildContext context) {
     var cubit =     BlocProvider.of<HomeCubit>(context);
-    return BlocConsumer<HomeCubit,HomeState>(
+    return BlocConsumer<HomeCubit, HomeState>(
       builder: (BuildContext context, state) {
-        List<ProductModel> products =cubit.products;
+        List<ProductModel> products = cubit.products;
+
         if (state is ProductsHomeLoadingState) {
-          return  BuildShimmerShape(width: 0.5.w, height: 0.4.h);
+          return BuildShimmerShape(width: 0.5.w, height: 0.4.h);
         }
+
         if (state is ProductsHomeSuccessState) {
           return Wrap(
             alignment: WrapAlignment.spaceAround,
@@ -39,14 +41,39 @@ class _ProductGridState extends State<ProductGrid> {
               products.length,
                   (index) => SizedBox(
                 width: 0.43.w, // Set width for each item
-                child:  ProductCard(productModel: products[index],),
+                child: ProductCard(productModel: products[index]),
               ),
             ),
           );
         }
+
+        if (state is ProductsHomeFaliureState) {
+          // Display an error message or widget
+          return Center(
+            child: Text(
+              state.errorMessage, // Display the error message from the state
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 16,
+              ),
+            ),
+          );
+        }
+
+        // Default fallback widget
         return const SizedBox();
       },
-      listener: (BuildContext context, Object? state) {  },
+      listener: (BuildContext context, Object? state) {
+        // Optional: Add a listener to handle side effects (e.g., show a snackbar)
+        if (state is ProductsHomeFaliureState) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+      },
     );
   }
 }
