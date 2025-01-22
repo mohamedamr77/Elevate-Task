@@ -1,5 +1,6 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
 import 'package:elevatetask/core/shared_widget/build_shimmer_shape.dart';
+import 'package:elevatetask/feature/fav_product/presentation/view_model/fav_product_cubit.dart';
 import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:elevatetask/core/shared_widget/product_item/product_card.dart';
 import 'package:elevatetask/feature/home/presentation/view_model/home_state.dart';
@@ -23,7 +24,13 @@ class _ProductGridState extends State<ProductGrid>
   }
 
   void _fetchProducts() {
-    BlocProvider.of<HomeCubit>(context).fetchProduct();
+    _fetchFavProduct();
+    BlocProvider.of<HomeCubit>(context).fetchProduct(
+        favList: BlocProvider.of<FavProductCubit>(context).favProductList);
+  }
+
+  void _fetchFavProduct() {
+    BlocProvider.of<FavProductCubit>(context).fetchFavProduct();
   }
 
   @override
@@ -41,7 +48,7 @@ class _ProductGridState extends State<ProductGrid>
 
   Widget _buildContent(HomeState state) {
     final cubit = BlocProvider.of<HomeCubit>(context);
-    final products = cubit.products;
+    List<ProductModel> products = cubit.products;
 
     if (state is ProductsHomeLoadingState && products.isEmpty) {
       return _buildLoadingState();
