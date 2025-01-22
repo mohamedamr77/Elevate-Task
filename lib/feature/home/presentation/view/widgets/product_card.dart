@@ -1,4 +1,5 @@
 import 'package:elevatetask/core/extentions/screen_size.dart';
+import 'package:elevatetask/feature/home/data/model/product_model.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/fav_button.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/image_product.dart';
 import 'package:elevatetask/feature/home/presentation/view/widgets/price_product.dart';
@@ -8,8 +9,9 @@ import 'package:flutter/material.dart';
 import 'add_to_cart_button.dart';
 
 class ProductCard extends StatelessWidget {
+  final ProductModel productModel;
   const ProductCard({
-    super.key,
+    super.key, required this.productModel,
   });
 
   @override
@@ -17,7 +19,7 @@ class ProductCard extends StatelessWidget {
     return Stack(
       children: [
         // Product Card Container
-        _buildProductCard(),
+        _buildProductCard(productModel: productModel),
         // Add to Cart Button
         AddToCartButton(
           onTap: () {},
@@ -28,32 +30,30 @@ class ProductCard extends StatelessWidget {
     );
   }
 
-  Widget _buildProductCard() {
+  Widget _buildProductCard({required ProductModel productModel}) {
     return Container(
+      padding: EdgeInsets.symmetric(vertical: 16),
       decoration: _buildDecorationItem(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           // Product Image
-          const ImageProduct(
-            urlImage: "assets/images/clothestest.jpeg",
+           ImageProduct(
+            urlImage: productModel.image,
           ),
           _buildSpacerWidget(),
           // Product Title
-          const TitleProduct(
-            title:
-                "Nike Air NikeNike Air Nike Nike Air Nike   Air Nike Nike Air Nike  ",
-          ),
+           TitleProduct(
+            title: productModel.title),
           _buildSpacerWidget(),
           // Product Price
-          const PriceProduct(
-            price: '1200',
+           PriceProduct(
+            price: productModel.price.toString(),
           ),
           // Product Rating
-          const RatingProduct(
-            rate: '4.6',
+           RatingProduct(
+            rate: productModel.rating.rate.toString(),
           ),
-          _buildSpacerWidget(height: 16),
         ],
       ),
     );

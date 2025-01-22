@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> {
   Map<String ,List<ProductModel>> getProductsMap ={};
 
   fetchProduct()async{
+    emit(ProductsHomeLoadingState());
     var result =await homeRepo.getProduct();
     result.fold((error) {
       debugPrint(error.errorMessage);
