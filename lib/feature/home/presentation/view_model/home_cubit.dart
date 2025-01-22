@@ -8,7 +8,6 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit({required this.homeRepo}) : super(HomeInitialState());
   final HomeRepo homeRepo;
   List<ProductModel> products=[];
-  Map<String ,List<ProductModel>> getProductsMap ={};
 
   fetchProduct()async{
     emit(ProductsHomeLoadingState());
@@ -19,9 +18,6 @@ class HomeCubit extends Cubit<HomeState> {
     emit(ProductsHomeFaliureState(errorMessage: error.errorMessage));
     }, (productsList) {
       products =productsList;
-      getProductsMap ={
-        "products": products,
-      };
       debugPrint(products.toString());
       emit(ProductsHomeSuccessState());
     },);
